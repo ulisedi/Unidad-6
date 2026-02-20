@@ -1,4 +1,4 @@
-package e6_14;
+
 
 import java.util.Scanner;
 import java.util.HashMap;
