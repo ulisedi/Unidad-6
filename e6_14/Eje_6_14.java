@@ -45,9 +45,10 @@ public class Eje_6_14 {
             if (producto.trim().equalsIgnoreCase("fin")) {
                 break;
             }
-            // falta comprobar si el producto esta dentro de los productos dados
             if (!precios.containsKey(producto)) {
+                System.out.println("--");
                 System.out.println("El producto no existe.");
+                System.out.println("--");
                 continue;
             }
             System.out.print("Cantidad: ");
@@ -64,12 +65,24 @@ public class Eje_6_14 {
             } else {
                 compra.put(producto, cantidad);
             }
-
             s.nextLine();
-
         } while (!producto.equals("fin"));
-       
 
+        double total = 0;
+        System.out.println("|---------------------------------------------|");
+        System.out.printf("| %-12s | %-8s | %-6s | %-8s |\n", "Producto", "Precio", "Cant", "Total");
+        System.out.println("|---------------------------------------------|");
+
+        for (String prod : compra.keySet()) {
+            int cantidades = compra.get(prod);
+            double precio = precios.get(prod);
+            double subtotal = precio * cantidades;
+            System.out.printf("| %-12s | %-8.2f | %-6d | %-8.2f |\n", prod, precio, cantidades, subtotal);
+            total += subtotal;
+        }
+        System.out.println("|---------------------------------------------|");
+        System.out.printf("|                              %4s %.4f |\n", "TOTAL:", total);
+        System.out.println("|---------------------------------------------|");
         s.close();
     }
 
