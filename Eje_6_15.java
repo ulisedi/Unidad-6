@@ -1,6 +1,6 @@
 
-
 import java.util.Scanner;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -25,20 +25,27 @@ import java.util.HashMap;
  * @input nada
  * @output
  */
-public class Eje_6_14 {
+public class Eje_6_15 {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
 
         HashMap<String, Double> precios = new HashMap<String, Double>();
+        ArrayList<String> descuentos = new ArrayList<String>();
+        HashMap<String, Integer> compra = new HashMap<String, Integer>();
+        String producto;
+        int cantidad = 0;
+        Double descuento;
+        double total = 0;
+        boolean descuentoAplicable = false;
+        
         precios.put("avena", 2.21);
         precios.put("garbanzos", 2.39);
         precios.put("tomate", 1.59);
         precios.put("jengibre", 3.13);
         precios.put("quinoa", 4.5);
         precios.put("guisantes", 1.6);
-        HashMap<String, Integer> compra = new HashMap<String, Integer>();
-        String producto;
-        int cantidad = 0;
+        descuentos.add("ECODTO");
+
         do {
             System.out.print("Producto: ");
             producto = s.nextLine();
@@ -67,12 +74,17 @@ public class Eje_6_14 {
             }
             s.nextLine();
         } while (!producto.equals("fin"));
+        System.out.print("Introduzca código de descuento (INTRO si no tiene ninguno):");
+        producto = s.nextLine();
 
-        double total = 0;
+        for (String palabraDescuento : descuentos) {
+            if (producto.equals(palabraDescuento)) {
+                descuentoAplicable = true;
+            }
+        }
         System.out.println("|---------------------------------------------|");
         System.out.printf("| %-12s | %-8s | %-6s | %-8s |\n", "Producto", "Precio", "Cant", "Total");
         System.out.println("|---------------------------------------------|");
-
         for (String prod : compra.keySet()) {
             int cantidades = compra.get(prod);
             double precio = precios.get(prod);
@@ -81,9 +93,19 @@ public class Eje_6_14 {
             total += subtotal;
         }
         System.out.println("|---------------------------------------------|");
-        System.out.printf(" %4s %.2f\n", "TOTAL:", total);
-        
+        if (descuentoAplicable) {
+            descuento = total / 10;
+            System.out.printf(" %4s %.2f\n", "Descuento:", descuento);
+            System.out.println("----------------------");
+            System.out.printf(" %4s %.2f\n", "TOTAL:", total - descuento);
+            System.out.println("----------------------");
+        } else {
+            System.out.printf(" %4s %.2f\n", "TOTAL:", total);
+            System.out.println("----------------------");
+        }
+
         s.close();
+
     }
 
 }
