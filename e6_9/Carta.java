@@ -1,8 +1,8 @@
-package e6_8;
+package e6_9;
 
 public class Carta {
     public enum Palos {
-        COPAS, BASTOS, ESPADAS, OROS
+        BASTOS, COPAS, OROS, ESPADAS
     }
 
     int valor;
@@ -30,8 +30,20 @@ public class Carta {
     }
 
     public String toString() {
+        switch (this.valor) {
+            case 1:
+                return "As" + " de " + this.palo;
+            case 10:
+                return "Sota" + " de " + this.palo;
+            case 11:
+                return "Caballo" + " de " + this.palo;
+            case 12:
+                return "Rey" + " de " + this.palo;
 
-        return this.valor + " - " + this.palo;
+            default:
+                return this.valor + " de " + this.palo;
+        }
+
     }
 
 }

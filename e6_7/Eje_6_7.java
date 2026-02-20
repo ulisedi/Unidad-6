@@ -20,9 +20,12 @@ import java.util.HashMap;
 public class Eje_6_7 {
     public static void main(String[] args) {
         ArrayList<Moneda> valor = new ArrayList<Moneda>();
-        ArrayList<String> n = new ArrayList<String>();
-        ArrayList<String> c = new ArrayList<String>();
-    n.add("");
+        ArrayList<Integer> n = new ArrayList<Integer>();
+        ArrayList<Moneda.lado> c = new ArrayList<Moneda.lado>();
+    
+
+
+
 
         // HashMap<Moneda> cuenta = new HashMap<Moneda>();
     }

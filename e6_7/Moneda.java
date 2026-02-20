@@ -1,10 +1,15 @@
 package e6_7;
 
 public class Moneda {
-    int valor;
-    String lado;
+    public enum lado {
+        CARA, CRUZ
+    }
 
-    public Moneda(int v, String l) {
+    int valor;
+    lado lado;
+
+    //
+    public Moneda(int v, lado l) {
         this.valor = v;
         this.lado = l;
     }
@@ -17,16 +22,18 @@ public class Moneda {
         this.valor = valor;
     }
 
-    public String getLado() {
+    public lado getLado() {
         return lado;
     }
 
-    public void setLado(String lado) {
+    public void setLado(lado lado) {
         this.lado = lado;
     }
 
+    //
     public String toString() {
 
         return this.valor + " - " + this.lado;
     }
+
 }
