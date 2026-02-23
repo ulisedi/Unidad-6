@@ -1,6 +1,5 @@
 
 import java.util.Scanner;
-import java.security.Key;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,6 +21,7 @@ public class Eje_6_19 {
         Scanner s = new Scanner(System.in);
         String ingles;
         HashMap<String, String> diccionario = new HashMap<>();
+
         diccionario.put("caliente", "hot");
         diccionario.put("ardiente", "hot");
         diccionario.put("candente", "hot");
@@ -33,7 +33,6 @@ public class Eje_6_19 {
         diccionario.put("fuego", "fire");
         diccionario.put("rojo", "red");
         diccionario.put("grande", "big");
-
         do {
             System.out.print("Introduzca una palabra y le daré los sinónimos: ");
             ingles = s.nextLine();
@@ -41,21 +40,27 @@ public class Eje_6_19 {
                 break;
             }
             if (!diccionario.containsKey(ingles)) {
-                System.out.println("No conozco sinónimos de esa palabra");
+                System.out.println("No conozco esa palabra ");
                 continue;
             }
-            //si pone fuego no sale nada, haces que cada vez que aparezca el sinonimo lo añada a una cadena y si solo aparece una vez
-            //ponga que no sabe sinonimos
-            System.out.print("Sinónimos de " + ingles + " : ");
+            int aparece = 0;
+            String palabras = "Sinónimos de ";
+            palabras += ingles + " : ";
             for (Map.Entry sinonimos : diccionario.entrySet()) {
-                if (sinonimos.getValue().equals(diccionario.get(ingles)) && !sinonimos.getKey().equals(ingles)) {
-                    System.out.print(sinonimos.getKey());
-                    System.out.print(",");
+                if (sinonimos.getValue().equals(diccionario.get(ingles))) {
+                    aparece++;
+                    if (!sinonimos.getKey().equals(ingles)) {
+                        palabras += sinonimos.getKey() + ",";
+                    }
                 }
 
             }
-            System.out.println("");
-        } while (!ingles.equals("salir"));
+            if (aparece > 1) {
+                System.out.println(palabras);
+            } else  {
+                System.out.println("No conozco sinónimos de esa palabra ");
+            }
+        } while (true);
 
         s.close();
 
