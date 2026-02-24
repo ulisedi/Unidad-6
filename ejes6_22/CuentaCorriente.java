@@ -47,26 +47,48 @@ public class CuentaCorriente {
     //
     public void ingreso(int i) {
         this.saldo += i;
-        this.movimientos += "Ingreso de " + i + " Saldo: " + this.saldo + "\n";
+
+        NumberFormat formato = NumberFormat.getCurrencyInstance(new Locale("es", "ES"));
+
+        this.movimientos += String.format(
+                "%1s %15s%n",
+                "Ingreso de " + formato.format(i),
+                "Saldo " + formato.format(this.saldo));
 
     }
 
     public void cargo(int i) {
         this.saldo -= i;
-        this.movimientos += "Cargo de " + i + " Saldo: " + this.saldo + "\n";
+
+        NumberFormat formato = NumberFormat.getCurrencyInstance(new Locale("es", "ES"));
+
+        this.movimientos += String.format("%1s %15s%n", "Cargo de " + formato.format(i),
+                "Saldo " + formato.format(this.saldo));
 
     }
 
     public void transferencia(CuentaCorriente a, int d) {
         this.saldo -= d;
         a.saldo += d;
-        this.movimientos += "Transf. recibida de " + d + "  de la cuenta " + a + "    Saldo " + this.saldo + "\n";
-        a.movimientos += "Transf. emitida de " + d + "  de la cuenta " + this.nCuenta + "    Saldo " + a.saldo + "\n";
+
+        NumberFormat formato = NumberFormat.getCurrencyInstance(new Locale("es", "ES"));
+
+        this.movimientos += String.format(
+                "%-55s %15s%n", "Transf. emitida de " + formato.format(d) +
+                        " a la cuenta " + a.getnCuenta(),
+                "Saldo " + formato.format(this.saldo));
+
+        a.movimientos += String.format(
+                "%-55s %15s%n",
+                "Transf. recibida de " + formato.format(d) +
+                        " de la cuenta " + this.getnCuenta(),
+                "Saldo " + formato.format(a.saldo));
 
     }
 
     public String toString() {
         NumberFormat formato = NumberFormat.getCurrencyInstance(new Locale("es", "ES"));
+
         return "Número de cta: " + this.getnCuenta() + " Saldo: " + formato.format(this.getSaldo());
     }
 
@@ -76,4 +98,4 @@ public class CuentaCorriente {
         System.out.println(this.movimientos);
     }
 }
-// mira el formato de las cosas y error en nCuenta que llama al tostring y no quieres eso  
+//  comando para que salgan las €: chcp 65001
