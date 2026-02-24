@@ -27,7 +27,7 @@ public class Eje_6_7 {
 
 
 
-        // HashMap<Moneda> cuenta = new HashMap<Moneda>();
+        HashMap<Moneda> cuenta = new HashMap<Moneda>();
     }
 
 }

@@ -7,6 +7,7 @@ public class GestorDiscos {
 
     private ArrayList<Discos> listaDiscos;
     private Scanner sc = new Scanner(System.in);
+
     public GestorDiscos() {
         this.listaDiscos = new ArrayList<>();
     }
@@ -63,7 +64,7 @@ public class GestorDiscos {
                 System.out.println("--");
                 continue;
             }
-            if ( indice < 1 ||  indice > listaDiscos.size()) {
+            if (indice < 1 || indice > listaDiscos.size()) {
                 System.out.println("--");
                 System.out.println("El indice dado no esta en la lista de discos");
                 System.out.println("la cantidad de indices es: " + listaDiscos.size());
@@ -96,7 +97,7 @@ public class GestorDiscos {
                 System.out.println("--");
                 continue;
             }
-            if (indice < 1 ||  indice > listaDiscos.size()) {
+            if (indice < 1 || indice > listaDiscos.size()) {
                 System.out.println("--");
                 System.out.println("El indice dado no esta en la lista de discos");
                 System.out.println("la cantidad de indices es: " + listaDiscos.size());
