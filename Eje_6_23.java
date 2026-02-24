@@ -19,60 +19,61 @@ import java.util.Map;
  */
 public class Eje_6_23 {
     public static void main(String[] args) {
-        HashMap<Integer, String> valores = new HashMap<>();
-        HashMap<String, Integer> piezasTomadas = new HashMap<>();
+        HashMap<String, Integer> valores = new HashMap<>();
+        HashMap<Integer, String> piezasTomadas = new HashMap<>();
+        HashMap<String, Integer> maximos = new HashMap<>();
         int random = (int) (Math.random() * 15) + 1;
         int puntos = random;
-        valores.put(9, "dama");
-        valores.put(5, "torre");
-        valores.put(3, "alfil");
-        valores.put(2, "caballo");
-        valores.put(1, "peon");
+        int cont = 0;
+
+        maximos.put("torre", 2);
+        maximos.put("alfil", 2);
+        maximos.put("caballo", 2);
+        maximos.put("peon", 8);
+        valores.put("dama", 9);
+        valores.put("torre", 5);
+        valores.put("alfil", 3);
+        valores.put("caballo", 2);
+        valores.put("peon", 1);
         do {
 
             if (random >= 9) {
                 int randomVal = (int) (Math.random() * 5) + 1;
                 switch (randomVal) {
                     case 1:
-                        piezasTomadas.put("dama", 1);
+                        piezasTomadas.put(cont++, "dama");
                         random -= 9;
                         break;
                     case 2:
-                        if (!piezasTomadas.containsKey("torre")) {
-                            piezasTomadas.put("torre", 1);
+                        if (maximos.get("torre") != 0) {
+                            piezasTomadas.put(cont++, "torre");
                             random -= 5;
-                        } else if (piezasTomadas.get("torre") < 2) {
-                            piezasTomadas.put("torre", piezasTomadas.get("torre") + 1);
+                            maximos.put("torre", maximos.get("torre") - 1);
                         }
                         break;
                     case 3:
-                        if (!piezasTomadas.containsKey("alfil")) {
-                            piezasTomadas.put("alfil", 1);
+                        if (maximos.get("alfil") != 0) {
+                            piezasTomadas.put(cont++, "alfil");
                             random -= 3;
-                        } else if (piezasTomadas.get("alfil") < 2) {
-                            piezasTomadas.put("alfil", piezasTomadas.get("alfil") + 1);
+                            maximos.put("alfil", maximos.get("alfil") - 1);
                         }
 
-                        random -= 3;
                         break;
                     case 4:
-                        if (!piezasTomadas.containsKey("caballo")) {
-                            piezasTomadas.put("caballo", 1);
+                        if (maximos.get("caballo") != 0) {
+                            piezasTomadas.put(cont++, "caballo");
                             random -= 2;
-                        } else if (piezasTomadas.get("caballo") < 2) {
-                            piezasTomadas.put("caballo", piezasTomadas.get("caballo") + 1);
+                            maximos.put("caballo", maximos.get("caballo") - 1);
                         }
 
-                        random -= 2;
                         break;
                     case 5:
-                        if (!piezasTomadas.containsKey("peon")) {
-                            piezasTomadas.put("peon", 1);
-                            random -= 2;
-                        } else if (piezasTomadas.get("peon") < 8) {
-                            piezasTomadas.put("peon", piezasTomadas.get("peon") + 1);
+                        if (maximos.get("peon") != 0) {
+                            piezasTomadas.put(cont++, "peon");
+                            random -= 1;
+                            maximos.put("peon", maximos.get("peon") - 1);
                         }
-                        random -= 1;
+
                         break;
 
                     default:
@@ -83,41 +84,35 @@ public class Eje_6_23 {
                 int randomVal = (int) (Math.random() * 4) + 1;
                 switch (randomVal) {
                     case 1:
-                        if (!piezasTomadas.containsKey("torre")) {
-                            piezasTomadas.put("torre", 1);
+                        if (maximos.get("torre") != 0) {
+                            piezasTomadas.put(cont++, "torre");
                             random -= 5;
-                        } else if (piezasTomadas.get("torre") < 2) {
-                            piezasTomadas.put("torre", piezasTomadas.get("torre") + 1);
+                            maximos.put("torre", maximos.get("torre") - 1);
                         }
                         break;
                     case 2:
-                        if (!piezasTomadas.containsKey("alfil")) {
-                            piezasTomadas.put("alfil", 1);
+                        if (maximos.get("alfil") != 0) {
+                            piezasTomadas.put(cont++, "alfil");
                             random -= 3;
-                        } else if (piezasTomadas.get("alfil") < 2) {
-                            piezasTomadas.put("alfil", piezasTomadas.get("alfil") + 1);
+                            maximos.put("alfil", maximos.get("alfil") - 1);
                         }
 
-                        random -= 3;
                         break;
                     case 3:
-                        if (!piezasTomadas.containsKey("caballo")) {
-                            piezasTomadas.put("caballo", 1);
+                        if (maximos.get("caballo") != 0) {
+                            piezasTomadas.put(cont++, "caballo");
                             random -= 2;
-                        } else if (piezasTomadas.get("caballo") < 2) {
-                            piezasTomadas.put("caballo", piezasTomadas.get("caballo") + 1);
+                            maximos.put("caballo", maximos.get("caballo") - 1);
                         }
 
-                        random -= 2;
                         break;
                     case 4:
-                        if (!piezasTomadas.containsKey("peon")) {
-                            piezasTomadas.put("peon", 1);
-                            random -= 2;
-                        } else if (piezasTomadas.get("peon") < 8) {
-                            piezasTomadas.put("peon", piezasTomadas.get("peon") + 1);
+                        if (maximos.get("peon") != 0) {
+                            piezasTomadas.put(cont++, "peon");
+                            random -= 1;
+                            maximos.put("peon", maximos.get("peon") - 1);
                         }
-                        random -= 1;
+
                         break;
 
                     default:
@@ -128,33 +123,27 @@ public class Eje_6_23 {
                 int randomVal = (int) (Math.random() * 3) + 1;
                 switch (randomVal) {
                     case 1:
-                        if (!piezasTomadas.containsKey("alfil")) {
-                            piezasTomadas.put("alfil", 1);
+                        if (maximos.get("alfil") != 0) {
+                            piezasTomadas.put(cont++, "alfil");
                             random -= 3;
-                        } else if (piezasTomadas.get("alfil") < 2) {
-                            piezasTomadas.put("alfil", piezasTomadas.get("alfil") + 1);
+                            maximos.put("alfil", maximos.get("alfil") - 1);
                         }
 
-                        random -= 3;
                         break;
                     case 2:
-                        if (!piezasTomadas.containsKey("caballo")) {
-                            piezasTomadas.put("caballo", 1);
+                        if (maximos.get("caballo") != 0) {
+                            piezasTomadas.put(cont++, "caballo");
                             random -= 2;
-                        } else if (piezasTomadas.get("caballo") < 2) {
-                            piezasTomadas.put("caballo", piezasTomadas.get("caballo") + 1);
+                            maximos.put("caballo", maximos.get("caballo") - 1);
                         }
-
-                        random -= 2;
                         break;
                     case 3:
-                        if (!piezasTomadas.containsKey("peon")) {
-                            piezasTomadas.put("peon", 1);
-                            random -= 2;
-                        } else if (piezasTomadas.get("peon") < 8) {
-                            piezasTomadas.put("peon", piezasTomadas.get("peon") + 1);
+                        if (maximos.get("peon") != 0) {
+                            piezasTomadas.put(cont++, "peon");
+                            random -= 1;
+                            maximos.put("peon", maximos.get("peon") - 1);
                         }
-                        random -= 1;
+
                         break;
 
                     default:
@@ -164,44 +153,43 @@ public class Eje_6_23 {
                 int randomVal = (int) (Math.random() * 2) + 1;
                 switch (randomVal) {
                     case 1:
-                        if (!piezasTomadas.containsKey("caballo")) {
-                            piezasTomadas.put("caballo", 1);
+                        if (maximos.get("caballo") != 0) {
+                            piezasTomadas.put(cont++, "caballo");
                             random -= 2;
-                        } else if (piezasTomadas.get("caballo") < 2) {
-                            piezasTomadas.put("caballo", piezasTomadas.get("caballo") + 1);
+                            maximos.put("caballo", maximos.get("caballo") - 1);
                         }
 
-                        random -= 2;
                         break;
                     case 2:
-                        if (!piezasTomadas.containsKey("peon")) {
-                            piezasTomadas.put("peon", 1);
-                            random -= 2;
-                        } else if (piezasTomadas.get("peon") < 8) {
-                            piezasTomadas.put("peon", piezasTomadas.get("peon") + 1);
+                        if (maximos.get("peon") != 0) {
+                            piezasTomadas.put(cont++, "peon");
+                            random -= 1;
+                            maximos.put("peon", maximos.get("peon") - 1);
                         }
-                        random -= 1;
+
                         break;
 
                     default:
                         break;
                 }
             } else {
-                if (!piezasTomadas.containsKey("peon")) {
-                    piezasTomadas.put("peon", 1);
-                    random -= 2;
-                } else if (piezasTomadas.get("peon") < 8) {
-                    piezasTomadas.put("peon", piezasTomadas.get("peon") + 1);
+                if (maximos.get("peon") != 0) {
+                    piezasTomadas.put(cont++, "peon");
+                    random -= 1;
+                    maximos.put("peon", maximos.get("peon") - 1);
                 }
-                random -= 1;
+
             }
-        } while (random <= 0);
+        } while (random > 0);
 
         System.out.println("fichas capturasas por el jugador: ");
-        for (Map.Entry pieza : piezasTomadas.entrySet()) {
-            System.out.printf("%s (%d peones)\n", pieza.getKey(), (pieza.getValue())* valores. );
+        for (
+
+        Map.Entry pieza : piezasTomadas.entrySet()) {
+            System.out.printf("%s (%s peones)\n", pieza.getValue(), valores.get(pieza.getValue()));
+
         }
-        System.out.println("Puntos totales: "+puntos +" peones");
+        System.out.println("Puntos totales: " + puntos);
     }
 
 }
