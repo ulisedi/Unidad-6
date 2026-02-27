@@ -122,4 +122,147 @@ public class GestorDiscos {
             System.out.println((i + 1) + " " + listaDiscos.get(i));
         }
     }
+
+    public void cambiarAutor() {
+        int indice;
+        String autor;
+        if (listaDiscos.isEmpty()) {
+            System.out.println("--");
+            System.out.println("No hay discos para modificar.");
+            return;
+        }
+        do {
+            System.out.println("Dime el indice del disco que quieres modificar");
+            try {
+                indice = sc.nextInt();
+            } catch (Exception e) {
+                System.out.println("--");
+                System.out.println("Error: el valor tiene que ser Int ");
+                System.out.println("--");
+                continue;
+            }
+            if (indice < 1 || indice > listaDiscos.size()) {
+                System.out.println("--");
+                System.out.println("El indice dado no esta en la lista de discos");
+                System.out.println("la cantidad de indices es: " + listaDiscos.size());
+                System.out.println("--");
+
+                continue;
+            }
+            break;
+        } while (true);
+        sc.nextLine();
+        System.out.println("Dime el nuevo autor");
+        autor = sc.nextLine();
+        listaDiscos.get(indice - 1).setAutor(autor);
+    }
+    public void cambiarTitulo() {
+        int indice;
+        String titulo;
+        if (listaDiscos.isEmpty()) {
+            System.out.println("--");
+            System.out.println("No hay discos para modificar.");
+            return;
+        }
+        do {
+            System.out.println("Dime el indice del disco que quieres modificar");
+            try {
+                indice = sc.nextInt();
+            } catch (Exception e) {
+                System.out.println("--");
+                System.out.println("Error: el valor tiene que ser Int ");
+                System.out.println("--");
+                continue;
+            }
+            if (indice < 1 || indice > listaDiscos.size()) {
+                System.out.println("--");
+                System.out.println("El indice dado no esta en la lista de discos");
+                System.out.println("la cantidad de indices es: " + listaDiscos.size());
+                System.out.println("--");
+
+                continue;
+            }
+            break;
+        } while (true);
+        sc.nextLine();
+        System.out.println("Dime el nuevo titulo");
+        titulo = sc.nextLine();
+        listaDiscos.get(indice - 1).setTitulo(titulo);
+    }
+    public void cambiarGenero() {
+        int indice;
+        String genero;
+        if (listaDiscos.isEmpty()) {
+            System.out.println("--");
+            System.out.println("No hay discos para modificar.");
+            return;
+        }
+        do {
+            System.out.println("Dime el indice del disco que quieres modificar");
+            try {
+                indice = sc.nextInt();
+            } catch (Exception e) {
+                System.out.println("--");
+                System.out.println("Error: el valor tiene que ser Int ");
+                System.out.println("--");
+                continue;
+            }
+            if (indice < 1 || indice > listaDiscos.size()) {
+                System.out.println("--");
+                System.out.println("El indice dado no esta en la lista de discos");
+                System.out.println("la cantidad de indices es: " + listaDiscos.size());
+                System.out.println("--");
+
+                continue;
+            }
+            break;
+        } while (true);
+        sc.nextLine();
+        System.out.println("Dime el nuevo genero");
+        genero = sc.nextLine();
+        listaDiscos.get(indice - 1).setGenero(genero);
+    }
+    public void cambiarDuracion() {
+        int indice;
+        int duracion;
+        if (listaDiscos.isEmpty()) {
+            System.out.println("--");
+            System.out.println("No hay discos para modificar.");
+            return;
+        }
+        do {
+            System.out.println("Dime el indice del disco que quieres modificar");
+            try {
+                indice = sc.nextInt();
+            } catch (Exception e) {
+                System.out.println("--");
+                System.out.println("Error: el valor tiene que ser Int ");
+                System.out.println("--");
+                continue;
+            }
+            if (indice < 1 || indice > listaDiscos.size()) {
+                System.out.println("--");
+                System.out.println("El indice dado no esta en la lista de discos");
+                System.out.println("la cantidad de indices es: " + listaDiscos.size());
+                System.out.println("--");
+
+                continue;
+            }
+            break;
+        } while (true);
+        sc.nextLine();
+        do {
+            System.out.println("Dime la nueva duracion");
+            try {
+                duracion = sc.nextInt();
+            } catch (Exception e) {
+                System.out.println("--");
+                System.out.println("Error: el valor tiene que ser Int ");
+                System.out.println("--");
+                continue;
+            }
+            break;
+        } while (true);
+        listaDiscos.get(indice - 1).setDuracion(duracion);
+    }
 }

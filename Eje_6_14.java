@@ -1,5 +1,4 @@
 
-
 import java.util.Scanner;
 import java.util.HashMap;
 
@@ -22,8 +21,8 @@ import java.util.HashMap;
  * 2,21 2,39 1,59 3,13 4,50 1,60
  * 
  * @author ECD
- * @input nada
- * @output
+ * @input los productos y cantidades a comprar
+ * @output la tabla con el producto, precio, cantidad y total de cada producto comprado y el total
  */
 public class Eje_6_14 {
     public static void main(String[] args) {
@@ -82,7 +81,7 @@ public class Eje_6_14 {
         }
         System.out.println("|---------------------------------------------|");
         System.out.printf(" %4s %.2f\n", "TOTAL:", total);
-        
+
         s.close();
     }
 

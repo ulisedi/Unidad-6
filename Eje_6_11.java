@@ -15,7 +15,7 @@ import java.util.Collections;
  * 
  * @author ECD
  * @input entrada por el usuario segun lo que quiera hacer con el menú
- * @output sin salida específica
+ * @output salida por pantalla de lo que se le pida al usuario segun el menú
  */
 
 public class Eje_6_11 {

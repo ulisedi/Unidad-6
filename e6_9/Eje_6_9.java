@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * 
  * @author ECD
  * @input nada
- * @output
+ * @output 10 cartas ordenadas por palo y número
  */
 public class Eje_6_9 {
     public static void main(String[] args) {

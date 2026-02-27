@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * 
  * @author ECD
  * @input nada
- * @output
+ * @output  10 cartas al azar sin repetir
  */
 public class Eje_6_8 {
     public static void main(String[] args) {

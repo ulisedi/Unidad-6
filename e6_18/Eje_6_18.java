@@ -15,7 +15,7 @@ package e6_18;
  * 
  * @author ECD
  * @input nada
- * @output
+ * @output Contenido del carrito
  */
 public class Eje_6_18 {
     public static void main(String[] args) {

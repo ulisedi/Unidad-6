@@ -10,7 +10,7 @@ import java.util.Scanner;
  * 
  * @author ECD
  * @input entrada por el usuario segun lo que quiera hacer con el menú
- * @output sin salida específica
+ * @output traducción de la palabra introducida por el usuario o mensaje de error si no se encuentra en el diccionario
  */
 
 public class Eje_6_10 {

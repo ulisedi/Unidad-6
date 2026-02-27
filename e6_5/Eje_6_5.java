@@ -3,20 +3,17 @@ package e6_5;
 import java.util.Scanner;
 
 /**
- * Escribe un programa que genere una secuencia de 5 cartas de la baraja
- * española y que sume los puntos según el juego de la brisca. El valor de las
- * cartas se debe guardar en una estructura HashMap que debe contener parejas
- * (figura, valor), por ejemplo (“caballo”, 3). La secuencia de cartas debe ser
- * una
- * estructura de la clase ArrayList que contiene objetos de la clase Carta. El
- * valor
- * de las cartas es el siguiente: as → 11, tres → 10, sota → 2, caballo → 3, rey
- * → 4;
- * el resto de cartas no vale nada.
+ * Realiza de nuevo el ejercicio de la colección de discos pero utilizando esta
+ * vez
+ * una lista para almacenar la información sobre los discos en lugar de un array
+ * convencional. Comprobarás que el código se simplifica notablemente ¿Cuánto
+ * ocupa el programa original hecho con un array? ¿Cuánto ocupa este nuevo
+ * programa hecho con una lista?
+ * 
  * 
  * @author ECD
- * @input nada
- * @output
+ * @input valores pedidos en el programa
+ * @output salida dependiente de las acciones acometidas por el usuario
  */
 public class Eje_6_5 {
     public static void main(String[] args) {
@@ -60,9 +57,7 @@ public class Eje_6_5 {
                     coleccion.anadirDiscoFull();
                     break;
                 case 3:
-
                     coleccion.mostrarDisco();
-
                     break;
                 case 4:
                     coleccion.mostrarTodos();
@@ -71,16 +66,16 @@ public class Eje_6_5 {
                     coleccion.eliminardisco();
                     break;
                 case 6:
-
+                    coleccion.cambiarAutor();
                     break;
                 case 7:
-
+                    coleccion.cambiarTitulo();
                     break;
                 case 8:
-
+                    coleccion.cambiarGenero();
                     break;
                 case 9:
-
+                    coleccion.cambiarDuracion();
                     break;
 
                 default:

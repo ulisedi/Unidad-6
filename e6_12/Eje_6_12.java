@@ -18,7 +18,7 @@ import java.util.ArrayList;
  * 
  * @author ECD
  * @input nada
- * @output
+ * @output las cartas que tienes y los puntos que suman
  */
 public class Eje_6_12 {
     public static void main(String[] args) {
@@ -45,7 +45,6 @@ public class Eje_6_12 {
 
         for (Carta cartasasumar : cartas5) {
             System.out.println(cartasasumar);
-            // getOrDefault hace si no esta en el hasmap de un 0
             suma += valoresBrisca.getOrDefault(cartasasumar.getValor(), 0);
 
         }

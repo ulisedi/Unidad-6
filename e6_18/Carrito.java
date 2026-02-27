@@ -8,11 +8,9 @@ public class Carrito {
 
     public Carrito(Elemento e) {
         this.carro.add(e);
-
     }
 
     public Carrito() {
-
     }
 
     public ArrayList<Elemento> getCarro() {
@@ -34,11 +32,6 @@ public class Carrito {
     }
 
     public int numeroDeElementos() {
-        // int total = 0;
-        // for (Elemento e : carro) {
-        //     total += e.getCantidad();
-        // }
-        // return total;
         return carro.size();
     }
 

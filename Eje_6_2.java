@@ -33,13 +33,14 @@ public class Eje_6_2 {
 
             }
         }
-        System.out.println("Suma: " + suma);
-        System.out.printf("Media: %.2f \n",  (suma /  (double) tamaño));
-        System.out.println("Max: " + max);
-        System.out.println("Min: " + min);
         for (Integer integer : numeros) {
             System.out.print(integer + " ");
         }
+        System.out.println("Suma: " + suma);
+        System.out.printf("Media: %.2f \n", (suma / (double) tamaño));
+        System.out.println("Max: " + max);
+        System.out.println("Min: " + min);
+        System.out.println("Tamaño: " + tamaño);
     }
 
 }

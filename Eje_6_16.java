@@ -12,8 +12,8 @@ import java.util.HashMap;
  * diccionario. El usuario sale del programa escribiendo la palabra “salir”.
  * 
  * @author ECD
- * @input nada
- * @output
+ * @input capitales
+ * @output Escribe el nombre de un país y responderle con la capital
  */
 public class Eje_6_16 {
     public static void main(String[] args) {

@@ -22,8 +22,8 @@ import java.util.HashMap;
  * 2,21 2,39 1,59 3,13 4,50 1,60
  * 
  * @author ECD
- * @input nada
- * @output
+ * @input los productos y cantidades a comprar, y un código de descuento
+ * @output la tabla con el producto, precio, cantidad y total de cada producto comprado y el total
  */
 public class Eje_6_15 {
     public static void main(String[] args) {

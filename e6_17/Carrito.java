@@ -24,21 +24,10 @@ public class Carrito {
     }
 
     public void agrega(Elemento ele) {
-        // for (Elemento e : carro) {
-        //     if (e.getNombreP().equals(ele.getNombreP())) {
-        //         e.setCantidad(e.getCantidad());
-        //         return;
-        //     }
-        // }
         carro.add(ele);
     }
 
     public int numeroDeElementos() {
-        // int total = 0;
-        // for (Elemento e : carro) {
-        //     total += e.getCantidad();
-        // }
-        // return total;
         return carro.size();
     }
 

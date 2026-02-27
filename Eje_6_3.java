@@ -23,7 +23,7 @@ public class Eje_6_3 {
                 numeros.add(s.nextInt());
             } catch (Exception e) {
                 System.out.println("--");
-                System.out.println("Error en el valor introduciodo");
+                System.out.println("Error en el valor introduciodo tiene que ser un número entero");
                 System.out.println("--");
                 i--;
                 s.nextLine();
